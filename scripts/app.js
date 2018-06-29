@@ -60,8 +60,8 @@ function init() {
   function updatePage(e) {
       KeyFlag = false;
 
-      CurX = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
-      CurY = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
+      CurX = e.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
+      CurY = e.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
 
       oscillator.frequency.value = (CurX/WIDTH) * maxFreq;
       gainNode.gain.value = (CurY/HEIGHT) * maxVol;
